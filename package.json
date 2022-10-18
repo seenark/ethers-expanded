@@ -1,0 +1,33 @@
+{
+  "name": "@aumstack/ethers-expanded",
+  "version": "0.0.2",
+  "description": "wrap some ethers.js functions and hardhat utilities function",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "private": false,
+  "scripts": {
+    "dev": "node -r esbuild-register src/index.ts"
+  },
+  "keywords": [
+    "ethers",
+    "hardhat"
+  ],
+  "author": "Atiwat Seenark",
+  "license": "MIT",
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.0",
+    "@types/fs-extra": "^9.0.13",
+    "ethers": "^5.7.1",
+    "fs-extra": "^10.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.11",
+    "esbuild-plugin-d.ts": "^1.1.0",
+    "esbuild-register": "^3.3.3",
+    "fast-glob": "^3.2.12"
+  }
+}
