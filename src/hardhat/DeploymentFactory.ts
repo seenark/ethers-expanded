@@ -6,14 +6,8 @@ export interface IContractInfo<DeployFn extends (...args: any) => void> {
 	parameters: TEvmTypes[];
 }
 
-// export type IContractFile<Contracts extends BaseFactoryClass[]> = Record<
-// 	string,
-// 	IContractInfo<Parameters<Contracts[number]["deploy"]>>
-// >;
-
 export type IContractFile<ContractKey extends string> = Record<ContractKey, IContractInfo<BaseFactoryClass["deploy"]>>;
 
-// type TOverrides = (Overrides & { from?: PromiseOrValue<string> }) | undefined;
 export type TEvmTypes = "string" | "number" | Bytes;
 
 interface BaseFactoryClass {

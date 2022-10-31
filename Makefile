@@ -3,13 +3,19 @@ clean:
 
 compile:
 	make clean; \
-	node build.config.js;
+	node build.config.js; 
+
+cp-packagejson:
+	cp package.json dist/package.json
 
 pub:
-	npm version patch; \
-	npm publish --access public
+	npm version patch --no-git-tag-version; \
+	make cp-packagejson; \
+	cd dist; \
+	npm publish --access public 
 
 libs-compile-publish:
 	make clean; \
 	make compile; \
 	make pub;
+

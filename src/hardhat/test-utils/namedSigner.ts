@@ -15,6 +15,15 @@ export class NamedAccount {
 		});
 		return namedAccount;
 	}
+
+	static getNamedSigners<Account extends TNamedAccounts>(namedAccount: Account,signers: SignerWithAddress[]) {
+		const namedSigners = <{[key in keyof Account]: SignerWithAddress}>{}
+		for (const [key, value] of Object.entries(namedAccount)) {
+			namedSigners[key as keyof Account] = signers[value]	
+		}
+		return namedSigners;
+	}
+
 	static getNamedSignersAndContracts<Account extends TNamedAccounts, Contracts extends TContracts>(
 		namedAccount: Account,
 		signers: SignerWithAddress[],

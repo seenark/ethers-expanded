@@ -7,6 +7,9 @@ declare global {
 	interface Number {
 		currencyForm: (digit: number, locale?: TLocales) => string;
 		toErc20: (decimal?: number) => BigNumber;
+		toHex:() => string
+		to0xHex: () => string
+
 	}
 }
 
@@ -21,5 +24,13 @@ Number.prototype.currencyForm = function (
 };
 
 Number.prototype.toErc20 = function (decimal: number = 18) {
-	return numberToErc20(this, decimal);
+	return numberToErc20(this as number, decimal);
 };
+
+Number.prototype.toHex = function() {
+	return this.toString(16)
+}
+
+Number.prototype.to0xHex = function() {
+	return `0x${this.toHex()}`
+}
