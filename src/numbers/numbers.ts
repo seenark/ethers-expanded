@@ -9,6 +9,9 @@ declare global {
 		toErc20: (decimal?: number) => BigNumber;
 		toHex:() => string
 		to0xHex: () => string
+		roundDown: (digit?:number) => number
+		roundUp: (digit?:number) => number
+		round: (digit?: number) => number
 
 	}
 }
@@ -34,3 +37,20 @@ Number.prototype.toHex = function() {
 Number.prototype.to0xHex = function() {
 	return `0x${this.toHex()}`
 }
+
+Number.prototype.roundDown = function(digit: number = 0) {
+	const num = Number(`1e${digit}`)
+	return Math.floor(this as number * num) / num
+}
+
+Number.prototype.roundUp = function(digit: number = 0) {
+	const num = Number(`1e${digit}`)
+	return Math.ceil(this as number * num) / num
+}
+
+Number.prototype.round = function(digit: number = 0) {
+	const num = Number(`1e${digit}`)
+	return Math.round(this as number * num) / num
+}
+
+

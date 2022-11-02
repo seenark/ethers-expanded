@@ -1,6 +1,6 @@
 {
   "name": "@aumstack/ethers-expanded",
-  "version": "0.0.21",
+  "version": "0.0.23",
   "description": "wrap some ethers.js functions and hardhat utilities function",
   "main": "index.js",
   "module": "index.js",
