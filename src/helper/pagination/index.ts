@@ -43,3 +43,23 @@ export function calculatePagination(
 
 	return pagination;
 }
+
+export function calculatePaginationFromArray(page: number, numberOfItemInOnePage: number, array: number[]) {
+	const totalPage = Math.ceil(array.length / numberOfItemInOnePage);
+	let end = page * numberOfItemInOnePage
+	const start = end - numberOfItemInOnePage
+	if (end > array.length) {
+		end = array.length
+	}
+	console.log(start, end)
+	const copyArray = structuredClone(array)
+	const range = copyArray.slice(start,end)
+	const pagination: IPagination = {
+		start,
+		end,
+		range,
+		totalPage,
+		totalItem: array.length
+	};	
+	return pagination
+}

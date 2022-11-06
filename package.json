@@ -1,6 +1,6 @@
 {
   "name": "@aumstack/ethers-expanded",
-  "version": "0.0.23",
+  "version": "0.0.27",
   "description": "wrap some ethers.js functions and hardhat utilities function",
   "main": "index.js",
   "module": "index.js",
@@ -41,6 +41,7 @@
   "license": "MIT",
   "dependencies": {
     "@nomiclabs/hardhat-ethers": "^2.2.0",
+    "date-fns": "^2.29.3",
     "ethers": "^5.7.1",
     "fs-extra": "^10.1.0"
   },
